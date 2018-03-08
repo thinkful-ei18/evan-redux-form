@@ -64,7 +64,7 @@ render() {
   }
 
   let errorMessage;
-  if (this.props.submitFail) {
+  if (this.props.submitFailed) {
       errorMessage = (
           <div className="message message-error">{this.props.error}</div>
       );
@@ -72,7 +72,7 @@ render() {
 
 
     return (
-  <form className="App complaint-form" onSubmit={this.props.handleSubmit(values => {this.onSubmit(values)})}>
+  <form className="App complaint-form" onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 {successMessage}
                 {errorMessage}
           <h1>Report a problem with your delivery:</h1>
